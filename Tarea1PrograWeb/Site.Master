@@ -1,0 +1,32 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="Tarea1PrograWeb.SiteMaster" %>
+<!DOCTYPE html>
+<html lang="es">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tarea 1 - Programación web — <asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <!-- jQuery 3.7.1, compilación completa (incluye Ajax). Archivo: Scripts/jquery-3.7.1.min.js -->
+    <link href="<%= ResolveUrl("~/Content/site.css") %>" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</head>
+<body>
+    <form id="formPrincipal" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true" EnableCdn="false" />
+        <a class="saltar" href="#contenido">Saltar al contenido</a>
+        <header class="cabecera">
+            <div class="marca">
+                <a href="<%= ResolveUrl("~/Default.aspx") %>">Tarea 1 - Programación web</a>
+                <p>Descripción corta del sistema</p>
+            </div>
+
+        </header>
+        <main id="contenido" class="contenido">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </main>
+        <footer class="pie">Los datos viven solo en la sesión (Session, modo InProc).</footer>
+    </form>
+    <script src="<%= ResolveUrl("~/Scripts/jquery-3.7.1.min.js") %>"></script>
+    <script src="<%= ResolveUrl("~/Scripts/comun.js") %>"></script>
+    <asp:ContentPlaceHolder ID="ScriptsContent" runat="server" />
+</body>
+</html>
