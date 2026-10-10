@@ -4,7 +4,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tarea 1 - Programación web — <asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <title>Mesa de préstamos — <asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
     <!-- jQuery 3.7.1, compilación completa (incluye Ajax). Archivo: Scripts/jquery-3.7.1.min.js -->
     <link href="<%= ResolveUrl("~/Content/site.css") %>" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
@@ -15,15 +15,21 @@
         <a class="saltar" href="#contenido">Saltar al contenido</a>
         <header class="cabecera">
             <div class="marca">
-                <a href="<%= ResolveUrl("~/Default.aspx") %>">Tarea 1 - Programación web</a>
-                <p>Descripción corta del sistema</p>
+                <a href="<%= ResolveUrl("~/Default.aspx") %>">Mesa de préstamos</a>
+                <p>Laboratorio institucional · Mesa de TI</p>
             </div>
-
+            <nav aria-label="Funciones">
+                <a id="navRegistro" class="<%= ClaseNav("Registro.aspx") %>" href="<%= ResolveUrl("~/Registro.aspx") %>">Registro</a>
+                <a id="navConsulta" class="<%= ClaseNav("Consulta.aspx") %>" href="<%= ResolveUrl("~/Consulta.aspx") %>">Consulta</a>
+                <a id="navProcesamiento" class="<%= ClaseNav("Procesamiento.aspx") %>" href="<%= ResolveUrl("~/Procesamiento.aspx") %>">Procesamiento</a>
+            </nav>
         </header>
         <main id="contenido" class="contenido">
             <asp:ContentPlaceHolder ID="MainContent" runat="server" />
         </main>
-        <footer class="pie">Los datos viven solo en la sesión (Session, modo InProc).</footer>
+        <footer class="pie">
+            Los préstamos de esta mesa viven solo en la sesión del navegador (Session, modo InProc). Al cerrar el navegador se pierden. No hay usuarios ni base de datos.
+        </footer>
     </form>
     <script src="<%= ResolveUrl("~/Scripts/jquery-3.7.1.min.js") %>"></script>
     <script src="<%= ResolveUrl("~/Scripts/comun.js") %>"></script>
