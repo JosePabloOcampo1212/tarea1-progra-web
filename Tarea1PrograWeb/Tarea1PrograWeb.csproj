@@ -58,10 +58,12 @@
     <Content Include="Content\site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Procesamiento.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="Scripts\comun.js" />
     <Content Include="Scripts\consulta.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />
+    <Content Include="Scripts\procesamiento.js" />
     <Content Include="Scripts\registro.js" />
     <Content Include="Site.Master" />
     <Content Include="Web.config" />
@@ -87,6 +89,13 @@
     <Compile Include="Models\Equipo.cs" />
     <Compile Include="Models\Prestamo.cs" />
     <Compile Include="Models\Vistas.cs" />
+    <Compile Include="Procesamiento.aspx.cs">
+      <DependentUpon>Procesamiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Procesamiento.aspx.designer.cs">
+      <DependentUpon>Procesamiento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registro.aspx.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
